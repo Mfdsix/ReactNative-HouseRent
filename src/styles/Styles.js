@@ -94,7 +94,7 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   textLg: {
-    fontSize: 20,
+    fontSize: 24,
   },
   textXl: {
     fontSize: 28,
