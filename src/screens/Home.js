@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 import BottomNavigation from '../components/BottomNavigation';
@@ -170,110 +170,122 @@ export default function Home({navigation}) {
           {/* properties */}
           <ScrollView horizontal={true} style={Styles.ml1}>
             {PROPERTIES.map((property, index) => (
-              <View
-                key={index}
-                style={[
-                  Styles.mg1,
-                  Styles.bg,
-                  Styles.bdRad2,
-                  Styles.shadow,
-                  {
-                    width: 230,
-                  },
-                ]}>
-                {/* image */}
-                <View style={Styles.relative}>
-                  <Image
-                    style={[ScreenStyles.propertyImage, ScreenStyles.bdRadTop]}
-                    source={{uri: property.image}}
-                  />
-                  <View
-                    style={[
-                      Styles.absolute,
-                      ScreenStyles.ratingContainer,
-                      Styles.bg,
-                      Styles.pd1,
-                      Styles.bdRad2,
-                      Styles.flexRow,
-                      Styles.alignCenter,
-                      Styles.shadow,
-                    ]}>
-                    <Icon
-                      size={12}
-                      color={Colors.ORANGE}
-                      name="star"
-                      type="ionicon"
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('Detail')}>
+                <View
+                  key={index}
+                  style={[
+                    Styles.mg1,
+                    Styles.bg,
+                    Styles.bdRad2,
+                    Styles.shadow,
+                    {
+                      width: 230,
+                    },
+                  ]}>
+                  {/* image */}
+                  <View style={Styles.relative}>
+                    <Image
+                      style={[
+                        ScreenStyles.propertyImage,
+                        ScreenStyles.bdRadTop,
+                      ]}
+                      source={{uri: property.image}}
                     />
-                    <Text style={[Styles.textDark, Styles.textSm, Styles.ml1]}>
-                      {property.rating}
-                    </Text>
-                  </View>
-                  <View
-                    style={[
-                      Styles.absolute,
-                      ScreenStyles.favoriteContainer,
-                      Styles.bg,
-                      Styles.flexCenter,
-                      Styles.shadow,
-                    ]}>
-                    <Icon color={Colors.PRIMARY} name="heart" type="ionicon" />
-                  </View>
-                </View>
-                {/* content */}
-                <View style={Styles.pd1}>
-                  <Text
-                    style={[
-                      Styles.textPrimary,
-                      Styles.textBold,
-                      Styles.textSm,
-                    ]}>
-                    {property.category}
-                  </Text>
-                  <Text
-                    style={[
-                      Styles.textDark,
-                      Styles.textBold,
-                      Styles.textMd,
-                      Styles.mt1,
-                    ]}>
-                    {property.name}
-                  </Text>
-                  <View
-                    style={[Styles.mt1, Styles.flexRow, Styles.flexBetween]}>
-                    <View style={[Styles.flexRow, Styles.alignCenter]}>
+                    <View
+                      style={[
+                        Styles.absolute,
+                        ScreenStyles.ratingContainer,
+                        Styles.bg,
+                        Styles.pd1,
+                        Styles.bdRad2,
+                        Styles.flexRow,
+                        Styles.alignCenter,
+                        Styles.shadow,
+                      ]}>
                       <Icon
                         size={12}
-                        color={Colors.PRIMARY}
-                        name="navigate"
+                        color={Colors.ORANGE}
+                        name="star"
                         type="ionicon"
                       />
-                      <Text style={[Styles.textGrey, Styles.textSm]}>
-                        {property.location}
+                      <Text
+                        style={[Styles.textDark, Styles.textSm, Styles.ml1]}>
+                        {property.rating}
                       </Text>
                     </View>
-                    <View style={[Styles.flexRow, Styles.alignCenter]}>
+                    <View
+                      style={[
+                        Styles.absolute,
+                        ScreenStyles.favoriteContainer,
+                        Styles.bg,
+                        Styles.flexCenter,
+                        Styles.shadow,
+                      ]}>
                       <Icon
-                        size={12}
                         color={Colors.PRIMARY}
-                        name="ellipse"
+                        name="heart"
                         type="ionicon"
                       />
-                      <Text style={[Styles.textGrey, Styles.textSm]}>
-                        {property.status}
-                      </Text>
                     </View>
                   </View>
-                  <View style={Styles.mt1}>
-                    <Text style={[Styles.textGrey, Styles.textSm]}>
-                      Start from
+                  {/* content */}
+                  <View style={Styles.pd1}>
+                    <Text
+                      style={[
+                        Styles.textPrimary,
+                        Styles.textBold,
+                        Styles.textSm,
+                      ]}>
+                      {property.category}
                     </Text>
-                    <Text style={[Styles.textDark, Styles.textMd]}>
-                      <Text style={Styles.textBold}>${property.price}</Text> /
-                      {property.priceUnit}
+                    <Text
+                      style={[
+                        Styles.textDark,
+                        Styles.textBold,
+                        Styles.textMd,
+                        Styles.mt1,
+                      ]}>
+                      {property.name}
                     </Text>
+                    <View
+                      style={[Styles.mt1, Styles.flexRow, Styles.flexBetween]}>
+                      <View style={[Styles.flexRow, Styles.alignCenter]}>
+                        <Icon
+                          size={12}
+                          color={Colors.PRIMARY}
+                          name="navigate"
+                          type="ionicon"
+                        />
+                        <Text style={[Styles.textGrey, Styles.textSm]}>
+                          {property.location}
+                        </Text>
+                      </View>
+                      <View style={[Styles.flexRow, Styles.alignCenter]}>
+                        <Icon
+                          size={12}
+                          color={Colors.PRIMARY}
+                          name="ellipse"
+                          type="ionicon"
+                        />
+                        <Text style={[Styles.textGrey, Styles.textSm]}>
+                          {property.status}
+                        </Text>
+                      </View>
+                    </View>
+                    <View style={Styles.mt1}>
+                      <Text style={[Styles.textGrey, Styles.textSm]}>
+                        Start from
+                      </Text>
+                      <Text style={[Styles.textDark, Styles.textMd]}>
+                        <Text style={Styles.textBold}>${property.price}</Text> /
+                        {property.priceUnit}
+                      </Text>
+                    </View>
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         </View>
@@ -295,110 +307,122 @@ export default function Home({navigation}) {
           {/* properties */}
           <ScrollView horizontal={true} style={Styles.ml1}>
             {PROPERTIES.map((property, index) => (
-              <View
-                key={index}
-                style={[
-                  Styles.mg1,
-                  Styles.bg,
-                  Styles.bdRad2,
-                  Styles.shadow,
-                  {
-                    width: 230,
-                  },
-                ]}>
-                {/* image */}
-                <View style={Styles.relative}>
-                  <Image
-                    style={[ScreenStyles.propertyImage, ScreenStyles.bdRadTop]}
-                    source={{uri: property.image}}
-                  />
-                  <View
-                    style={[
-                      Styles.absolute,
-                      ScreenStyles.ratingContainer,
-                      Styles.bg,
-                      Styles.pd1,
-                      Styles.bdRad2,
-                      Styles.flexRow,
-                      Styles.alignCenter,
-                      Styles.shadow,
-                    ]}>
-                    <Icon
-                      size={12}
-                      color={Colors.ORANGE}
-                      name="star"
-                      type="ionicon"
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('Detail')}>
+                <View
+                  key={index}
+                  style={[
+                    Styles.mg1,
+                    Styles.bg,
+                    Styles.bdRad2,
+                    Styles.shadow,
+                    {
+                      width: 230,
+                    },
+                  ]}>
+                  {/* image */}
+                  <View style={Styles.relative}>
+                    <Image
+                      style={[
+                        ScreenStyles.propertyImage,
+                        ScreenStyles.bdRadTop,
+                      ]}
+                      source={{uri: property.image}}
                     />
-                    <Text style={[Styles.textDark, Styles.textSm, Styles.ml1]}>
-                      {property.rating}
-                    </Text>
-                  </View>
-                  <View
-                    style={[
-                      Styles.absolute,
-                      ScreenStyles.favoriteContainer,
-                      Styles.bg,
-                      Styles.flexCenter,
-                      Styles.shadow,
-                    ]}>
-                    <Icon color={Colors.PRIMARY} name="heart" type="ionicon" />
-                  </View>
-                </View>
-                {/* content */}
-                <View style={Styles.pd1}>
-                  <Text
-                    style={[
-                      Styles.textPrimary,
-                      Styles.textBold,
-                      Styles.textSm,
-                    ]}>
-                    {property.category}
-                  </Text>
-                  <Text
-                    style={[
-                      Styles.textDark,
-                      Styles.textBold,
-                      Styles.textMd,
-                      Styles.mt1,
-                    ]}>
-                    {property.name}
-                  </Text>
-                  <View
-                    style={[Styles.mt1, Styles.flexRow, Styles.flexBetween]}>
-                    <View style={[Styles.flexRow, Styles.alignCenter]}>
+                    <View
+                      style={[
+                        Styles.absolute,
+                        ScreenStyles.ratingContainer,
+                        Styles.bg,
+                        Styles.pd1,
+                        Styles.bdRad2,
+                        Styles.flexRow,
+                        Styles.alignCenter,
+                        Styles.shadow,
+                      ]}>
                       <Icon
                         size={12}
-                        color={Colors.PRIMARY}
-                        name="navigate"
+                        color={Colors.ORANGE}
+                        name="star"
                         type="ionicon"
                       />
-                      <Text style={[Styles.textGrey, Styles.textSm]}>
-                        {property.location}
+                      <Text
+                        style={[Styles.textDark, Styles.textSm, Styles.ml1]}>
+                        {property.rating}
                       </Text>
                     </View>
-                    <View style={[Styles.flexRow, Styles.alignCenter]}>
+                    <View
+                      style={[
+                        Styles.absolute,
+                        ScreenStyles.favoriteContainer,
+                        Styles.bg,
+                        Styles.flexCenter,
+                        Styles.shadow,
+                      ]}>
                       <Icon
-                        size={12}
                         color={Colors.PRIMARY}
-                        name="ellipse"
+                        name="heart"
                         type="ionicon"
                       />
-                      <Text style={[Styles.textGrey, Styles.textSm]}>
-                        {property.status}
-                      </Text>
                     </View>
                   </View>
-                  <View style={Styles.mt1}>
-                    <Text style={[Styles.textGrey, Styles.textSm]}>
-                      Start from
+                  {/* content */}
+                  <View style={Styles.pd1}>
+                    <Text
+                      style={[
+                        Styles.textPrimary,
+                        Styles.textBold,
+                        Styles.textSm,
+                      ]}>
+                      {property.category}
                     </Text>
-                    <Text style={[Styles.textDark, Styles.textMd]}>
-                      <Text style={Styles.textBold}>${property.price}</Text> /
-                      {property.priceUnit}
+                    <Text
+                      style={[
+                        Styles.textDark,
+                        Styles.textBold,
+                        Styles.textMd,
+                        Styles.mt1,
+                      ]}>
+                      {property.name}
                     </Text>
+                    <View
+                      style={[Styles.mt1, Styles.flexRow, Styles.flexBetween]}>
+                      <View style={[Styles.flexRow, Styles.alignCenter]}>
+                        <Icon
+                          size={12}
+                          color={Colors.PRIMARY}
+                          name="navigate"
+                          type="ionicon"
+                        />
+                        <Text style={[Styles.textGrey, Styles.textSm]}>
+                          {property.location}
+                        </Text>
+                      </View>
+                      <View style={[Styles.flexRow, Styles.alignCenter]}>
+                        <Icon
+                          size={12}
+                          color={Colors.PRIMARY}
+                          name="ellipse"
+                          type="ionicon"
+                        />
+                        <Text style={[Styles.textGrey, Styles.textSm]}>
+                          {property.status}
+                        </Text>
+                      </View>
+                    </View>
+                    <View style={Styles.mt1}>
+                      <Text style={[Styles.textGrey, Styles.textSm]}>
+                        Start from
+                      </Text>
+                      <Text style={[Styles.textDark, Styles.textMd]}>
+                        <Text style={Styles.textBold}>${property.price}</Text> /
+                        {property.priceUnit}
+                      </Text>
+                    </View>
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         </View>
