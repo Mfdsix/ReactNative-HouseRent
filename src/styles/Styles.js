@@ -51,10 +51,13 @@ export default StyleSheet.create({
   flexEnd: {
     justifyContent: 'flex-end',
   },
+  alignStart: {
+    alignItems: 'flex-start',
+  },
   alignCenter: {
     alignItems: 'center',
   },
-  alignRight: {
+  alignEnd: {
     alignItems: 'flex-end',
   },
   textCenter: {
@@ -77,6 +80,9 @@ export default StyleSheet.create({
   },
   textGrey: {
     color: Colors.GREY,
+  },
+  textSmoke: {
+    color: Colors.WHITE_SMOKE,
   },
   textBold: {
     fontWeight: 'bold',

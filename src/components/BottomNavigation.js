@@ -7,20 +7,20 @@ import Colors from '../values/Colors';
 
 const MENU_ITEMS = [
   {
-    icon: 'home-outline',
+    icon: 'home',
     title: 'Home',
     destination: 'Home',
   },
   {
-    icon: 'link-outline',
+    icon: 'map',
     title: 'Explore',
   },
   {
-    icon: 'link-outline',
+    icon: 'heart',
     title: 'Wishlist',
   },
   {
-    icon: 'link-outline',
+    icon: 'person-circle',
     title: 'Account',
   },
 ];
