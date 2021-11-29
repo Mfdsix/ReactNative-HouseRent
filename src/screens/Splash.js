@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
-import {Icon} from 'react-native-elements';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 
 import Styles from '../styles/Styles';
 import ScreenStyles from '../styles/Splash';
@@ -60,9 +59,14 @@ export default function Splash({navigation}) {
             />
           ))}
         </View>
-        <View style={[Styles.bgPrimary, Styles.pv1, Styles.ph2, Styles.bdRad2]}>
-          <Text style={Styles.textWhite}>Get Started</Text>
-        </View>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('Home')}>
+          <View
+            style={[Styles.bgPrimary, Styles.pv1, Styles.ph2, Styles.bdRad2]}>
+            <Text style={Styles.textWhite}>Get Started</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
