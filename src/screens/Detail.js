@@ -3,6 +3,9 @@ import {View, Text, Image, ScrollView} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 import Styles from '../styles/Styles';
+import DetailStyles from '../styles/Detail';
+
+import PROPERTIES from '../data/Properties';
 
 export default function Detail({navigation}) {
   const PROPERTY = PROPERTIES[0];
