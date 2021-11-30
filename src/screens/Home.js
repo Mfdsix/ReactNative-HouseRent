@@ -131,7 +131,7 @@ export default function Home({navigation}) {
                 Styles.mt2,
               ]}>
               {MENUS.map((menu, index) => (
-                <View key={index} style={[Styles.alignCenter]}>
+                <View key={'category-' + index} style={[Styles.alignCenter]}>
                   <View
                     style={[
                       Styles.bgPrimary,
@@ -156,7 +156,7 @@ export default function Home({navigation}) {
         </View>
         {/* nearest properties */}
         {LIST_NAMES.map((name, idx) => (
-          <View key={idx} style={[Styles.mt2]}>
+          <View key={'list-' + idx} style={[Styles.mt2]}>
             {/* title */}
             <View
               style={[
@@ -175,9 +175,9 @@ export default function Home({navigation}) {
               {PROPERTIES.map((property, index) => (
                 <TouchableOpacity
                   activeOpacity={0.7}
-                  onPress={() => navigation.navigate('Detail')}>
+                  onPress={() => navigation.navigate('Detail')}
+                  key={'property-' + idx + index}>
                   <View
-                    key={index}
                     style={[
                       Styles.mg1,
                       Styles.bg,

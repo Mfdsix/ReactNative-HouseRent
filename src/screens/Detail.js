@@ -187,7 +187,7 @@ export default function Detail({navigation}) {
                 </View>
                 <View
                   style={[Styles.pd1, Styles.bdRad2, Styles.shadow, Styles.bg]}>
-                  <Text>Annually</Text>
+                  <Text style={Styles.textDark}>Annually</Text>
                 </View>
               </View>
             </View>
@@ -211,7 +211,7 @@ export default function Detail({navigation}) {
                   </View>
                 ))}
               </ScrollView>
-              <Text style={[Styles.mt1, Styles.mb2]}>
+              <Text style={[Styles.mv2, Styles.textGrey]}>
                 {PROPERTY.description}
               </Text>
             </View>
@@ -245,10 +245,14 @@ export default function Detail({navigation}) {
             <Icon name="navigate" color={Colors.PRIMARY} type="ionicon" />
           </View>
           <View style={[ScreenStyles.headerButton, Styles.bgGrey, Styles.mr1]}>
-            <Icon name="chatbox-ellipses" color={Colors.GREEN} type="ionicon" />
+            <Icon
+              name="chatbox-ellipses"
+              color={Colors.PRIMARY}
+              type="ionicon"
+            />
           </View>
           <View style={[ScreenStyles.headerButton, Styles.bgGrey]}>
-            <Icon name="call" color={Colors.ORANGE} type="ionicon" />
+            <Icon name="call" color={Colors.PRIMARY} type="ionicon" />
           </View>
         </View>
       </View>

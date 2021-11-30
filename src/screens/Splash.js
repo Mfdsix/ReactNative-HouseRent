@@ -27,7 +27,7 @@ export default function Splash({navigation}) {
                 ScreenStyles.bgTransSecondary,
                 Styles.bdRad2,
               ]}>
-              <Text style={[Styles.textWhite]}>Lewati</Text>
+              <Text style={[Styles.textWhite]}>Skip</Text>
             </View>
           </TouchableOpacity>
         </View>
