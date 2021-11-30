@@ -5,6 +5,9 @@ export default StyleSheet.create({
   bg: {
     backgroundColor: Colors.WHITE,
   },
+  bgDark: {
+    backgroundColor: Colors.BLACK,
+  },
   bgPrimary: {
     backgroundColor: Colors.PRIMARY,
   },
@@ -100,7 +103,7 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   textLg: {
-    fontSize: 24,
+    fontSize: 22,
   },
   textXl: {
     fontSize: 28,
@@ -180,6 +183,9 @@ export default StyleSheet.create({
   mv4: {
     marginVertical: 40,
   },
+  mt05: {
+    marginTop: 5,
+  },
   mt1: {
     marginTop: 10,
   },
@@ -215,6 +221,9 @@ export default StyleSheet.create({
   },
   mr4: {
     marginRight: 40,
+  },
+  ml05: {
+    marginLeft: 5,
   },
   ml1: {
     marginLeft: 10,

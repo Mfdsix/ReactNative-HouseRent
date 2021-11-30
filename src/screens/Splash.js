@@ -16,17 +16,20 @@ export default function Splash({navigation}) {
             source={{uri: PROPERTY_IMAGES[0]}}
             style={ScreenStyles.bannerImage}
           />
-          <View
-            style={[
-              Styles.pv1,
-              Styles.ph2,
-              ScreenStyles.bgTransSecondary,
-              Styles.bdRad2,
-              Styles.absolute,
-              ScreenStyles.skipText,
-            ]}>
-            <Text style={[Styles.textWhite]}>Lewati</Text>
-          </View>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('Home')}
+            style={[Styles.absolute, ScreenStyles.skipText]}>
+            <View
+              style={[
+                Styles.pv1,
+                Styles.ph2,
+                ScreenStyles.bgTransSecondary,
+                Styles.bdRad2,
+              ]}>
+              <Text style={[Styles.textWhite]}>Lewati</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={Styles.pd2}>
           <Text style={[Styles.textDark, Styles.textBold, Styles.textLg]}>
@@ -64,7 +67,7 @@ export default function Splash({navigation}) {
           onPress={() => navigation.navigate('Home')}>
           <View
             style={[Styles.bgPrimary, Styles.pv1, Styles.ph2, Styles.bdRad2]}>
-            <Text style={Styles.textWhite}>Get Started</Text>
+            <Text style={Styles.textWhite}>Next Step</Text>
           </View>
         </TouchableOpacity>
       </View>
